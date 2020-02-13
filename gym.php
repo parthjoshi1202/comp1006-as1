@@ -18,8 +18,11 @@
             <label for="time_pref">Preferred Time: *</label>
             <input name="time_pref" id="time_pref" required />
         </fieldset>
-
-        
+        <fieldset>
+            <label for="membership">Select Membership Type: *</label>
+            <select name="membership" id="membership" required />
+    
+        </fieldset>
         <input type="submit" name="Add">
     </form>
 
