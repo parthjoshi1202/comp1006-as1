@@ -13,6 +13,7 @@ $firstName=htmlspecialchars($_POST['firstName']);
 $lastName=htmlspecialchars($_POST['lastName']);
 $time_pref=htmlspecialchars($_POST['time_pref']);
 $membership=htmlspecialchars($_POST['membership']);
+
 //boolean ok
 $ok=true;
 
@@ -27,6 +28,14 @@ if(empty($lastName)) {
 
 if($ok) {
     $database = new PDO('mysql:host=172.31.22.43;dbname=Parth1126914', 'Parth1126914', 'HE9auH3i9m');
+ }
+
+//creating a pdo command object
+    $cmd = $database->prepare($sql);
+    $cmd->bindParam(':firstName', $firstName, PDO::PARAM_STR, 50);
+    $cmd->bindParam(':lastName', $lastName, PDO::PARAM_STR, 50);
+    $cmd->bindParam(':time_pref', $time_pref, PDO::PARAM_STR,7);
+    $cmd->bindParam(':membership', $membership, PDO::PARAM_STR,40);
 
     
     
