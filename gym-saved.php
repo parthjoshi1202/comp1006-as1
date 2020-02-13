@@ -28,7 +28,12 @@ if(empty($lastName)) {
 
 if($ok) {
     $database = new PDO('mysql:host=172.31.22.43;dbname=Parth1126914', 'Parth1126914', 'HE9auH3i9m');
- }
+    
+    //set up SQL Insert command
+    if(empty($memberId)) {
+        $sql = "INSERT INTO gym (firstName, lastName, time_pref, membership) VALUES (:firstName,:lastName,:time_pref,:membership)";
+    }
+ 
 
 //creating a pdo command object
     $cmd = $database->prepare($sql);
@@ -37,8 +42,14 @@ if($ok) {
     $cmd->bindParam(':time_pref', $time_pref, PDO::PARAM_STR,7);
     $cmd->bindParam(':membership', $membership, PDO::PARAM_STR,40);
 
-    
-    
+//executing
+    $cmd->execute();
+
+//disconnect
+    $database = null;
+//show message to user
+    echo 'Details Saved';
+}
     
 ?>
 
