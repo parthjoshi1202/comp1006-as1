@@ -16,6 +16,15 @@ $cmd->execute();
 
 $store_data=$cmd->fetchAll();
 echo '<table border="1"><thead><th>firstName</th><th>lastName</th><th>time_pref</th><th>membership</th></thead>';
+    foreach ($store_data as $value)
+{
+    echo '<tr><td>' .$value['firstName']. '</td><td>'  .$value['lastName']. '</td><td>'  .$value['time_pref']. '</td><td>' .$value['membership']. '</td></tr>' ;
+}
+
+echo '</table>';
+
+//Disconnect
+$database=null;
 ?>
 </body>
 </html>
