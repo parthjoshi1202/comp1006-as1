@@ -21,7 +21,11 @@
         <fieldset>
             <label for="membership">Select Membership Type: *</label>
             <select name="membership" id="membership" required />
-    
+            <?php
+        $database= new PDO('mysql:host=172.31.22.43;dbname=Parth1126914', 'Parth1126914', 'HE9auH3i9m');            
+        $sql="SELECT membership FROM membership";
+        $cmd=$database->prepare($sql);
+
         </fieldset>
         <input type="submit" name="Add">
     </form>
