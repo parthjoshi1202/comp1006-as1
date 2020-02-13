@@ -22,6 +22,9 @@
             <label for="membership">Select Membership Type: *</label>
             <select name="membership" id="membership" required />
             <?php
+        //COMP 1006 Assignment-1
+        //Name-Parth Joshi
+        //Lakehead ID- 1126914
         $database= new PDO('mysql:host=172.31.22.43;dbname=Parth1126914', 'Parth1126914', 'HE9auH3i9m');            
         $sql="SELECT membership FROM membership";
         $cmd=$database->prepare($sql);
@@ -32,8 +35,6 @@
         }
         $database=null;
         ?>
-
-
         </fieldset>
         <input type="submit" name="Add">
     </form>
