@@ -9,6 +9,10 @@ require_once ('gym_header.php');
 //COMP 1006 Assignment-2
 //Name-Parth Joshi
 //Lakehead ID- 1126914
+if(!empty($_SESSION['memberId'])) {
+    echo '<a href="gym.php">Add Client</a>';
+}
+
 //Connect
 $database=new PDO('mysql:host=172.31.22.43;dbname=Parth1126914', 'Parth1126914', 'HE9auH3i9m');
 $query="SELECT * FROM gym";
@@ -19,9 +23,12 @@ $cmd->execute();
 
 //using fetchAll() method to store the data
 $store_data=$cmd->fetchAll();
- 
-//Displaying the Table
-echo '<table border="1"><thead><th>firstName</th><th>lastName</th><th>time_pref</th><th>membership</th></thead>';
+
+//Displaying the Table with Add, Delete and Edit Links
+echo '<table border="1"><thead><th>First Name</th><th>Last Name</th><th>Preferred Time</th><th>Membership</th><th>Delete</th><th>Edit</th></thead>';
+echo '<a href="gym.php">Add Client</a>';
+
+
     foreach ($store_data as $value)
 {
     echo '<tr><td>' .$value['firstName']. '</td><td>'  .$value['lastName']. '</td><td>'  .$value['time_pref']. '</td><td>' .$value['membership']. '</td></tr>' ;
