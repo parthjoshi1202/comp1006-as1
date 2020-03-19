@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PHP Gym - <?php echo $title; ?></title>
+     <link rel="stylesheet" href="css/css.css" />
 </head>
 <body>
 <nav>
