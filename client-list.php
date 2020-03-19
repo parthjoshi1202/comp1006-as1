@@ -31,7 +31,8 @@ echo '<a href="gym.php">Add Client</a>';
 
     foreach ($store_data as $value)
 {
-    echo '<tr><td>' .$value['firstName']. '</td><td>'  .$value['lastName']. '</td><td>'  .$value['time_pref']. '</td><td>' .$value['membership']. '</td></tr>' ;
+     echo '<tr><td>' .$value['firstName']. '</td><td>'  .$value['lastName']. '</td><td>'  .$value['time_pref']. '</td><td>' .$value['membership']. '</td><td><a href="delete-client.php?memberId='. $value['memberId'].'"class="btn btn-danger" 
+    onclick="return confirmDelete();">Delete</a></td></tr>';
 }
 
 echo '</table>';
