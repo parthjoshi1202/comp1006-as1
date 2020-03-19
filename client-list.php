@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Client Details</title>
-</head>
-<body>
 <?php
-//COMP 1006 Assignment-1
+$title='Client-List';
+require_once ('gym_header.php');
+?>
+
+<h1>Client List</h1>
+
+<?php
+//COMP 1006 Assignment-2
 //Name-Parth Joshi
 //Lakehead ID- 1126914
 //Connect
@@ -31,7 +31,6 @@ echo '</table>';
 
 //Disconnect
 $database=null;
-    
+
+require_once('gym_footer.php');
 ?>
-</body>
-</html>
