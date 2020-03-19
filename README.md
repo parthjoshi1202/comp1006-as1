@@ -3,4 +3,4 @@ This is a Gym Management Application where the User can enter their name, choose
 from a Dropdown List, it's a 24 Hour Gym so user can choose any time-slot. There is an Edit and Delete Link for Authenticated Users. 
 
 Link to Live Website:
-http://15.222.122.223/~Parth1126914/comp1006-as1/
+http://15.222.122.223/~Parth1126914/comp1006-as1/gym_index.php
