@@ -1,5 +1,6 @@
 <?php
-$title='Welcome Page Gym';
+$title='Homepage';
+require_once ('gym_header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,6 @@ $title='Welcome Page Gym';
 <p>This is a Platform for 24/7 Gym, Making People Happy, Healthy and Fit since 2020 ! </p>
 <p>Source Code: <a href="https://github.com/parthjoshi1202/comp1006-as1">github.com/parthjoshi1202/comp1006-as1</a> </p>
 
-</body>
-<footer>For COMP 1006 Assignment-2</footer>
-</html>
+<?php
+require_once('gym_footer.php');
+?>
