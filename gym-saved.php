@@ -9,6 +9,10 @@
 //COMP 1006 Assignment-2
 //Name-Parth Joshi
 //Lakehead ID- 1126914
+
+session_start();
+require_once 'gym_auth.php';    
+    
 $firstName=htmlspecialchars($_POST['firstName']);
 $lastName=htmlspecialchars($_POST['lastName']);
 $time_pref=htmlspecialchars($_POST['time_pref']);
@@ -29,7 +33,8 @@ if(empty($lastName)) {
     $ok=false;
 }
 
-if($ok=true) {
+if($ok==true) {
+    try {
     $database = new PDO('mysql:host=172.31.22.43;dbname=Parth1126914', 'Parth1126914', 'HE9auH3i9m');
     
     //set up SQL Insert command
@@ -60,6 +65,11 @@ if($ok=true) {
     $database = null;
 //show message to user
     echo 'Details Saved';
+    }
+     catch (Exception $e) {
+        echo 'Please Refresh and Try Again';
+        exit();
+    }
 }
     
 ?>
