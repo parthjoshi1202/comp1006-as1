@@ -15,7 +15,7 @@
                 <a href="client-list.php">Client List</a>
                 <?php
                 session_start();
-                if(!empty($_SESSION['memberId'])) {
+               if(!empty($_SESSION['userId'])) {
                     echo '<li><a href="#">' . $_SESSION['username'] . '</a></li>
                     <li><a href="gym_logout.php">Logout</a></li>';
                 }
