@@ -33,19 +33,20 @@ $store_data=$cmd->fetchAll();
  foreach ($store_data as $value) {
         echo '<tr>';
 
-        if (!empty($_SESSION['userId'])) {
-            echo '<td>' . $value['firstName'] . '</td><td>' . $value['lastName'] . '</td><td>' . $value['time_pref'] . '</td><td>' . $value['membership'] . '</td>';
+       if (!empty($_SESSION['userId'])) {
+           // echo '<td>' . $value['firstName'] . '</td><td>' . $value['lastName'] . '</td><td>' . $value['time_pref'] . '</td><td>' . $value['membership'] . '</td>';
+            echo '<td>' . $value['firstName'] . '</td><td>' . $value['lastName'] . '</td>' ;
         }
+
         else {
             //echo '<td>' . $value['firstName'] . '</td>';
-            echo '';
+            echo '<td>' . $value['firstName'] . '</td><td>' . $value['lastName'] . '</td>' ;
             //echo '<td>' . $value['firstName'] . '</td><td>' . $value['lastName'] . '</td><td>' . $value['time_pref'] . '</td><td>' . $value['membership'] . '</td>';
         }
 
-        /*echo '<td>' . $value['time_pref'] . '</td>
-            <td>' . $value['membership'] . '</td>';*/
+        echo '<td>' . $value['time_pref'] . '</td><td>' . $value['membership'] . '</td>';
 
-        echo '<td>' . $value['firstName'] . '</td><td>' . $value['lastName'] . '</td><td>' . $value['time_pref'] . '</td><td>' . $value['membership'] . '</td>';
+       // echo '<td>' . $value['firstName'] . '</td><td>' . $value['lastName'] . '</td><td>' . $value['time_pref'] . '</td><td>' . $value['membership'] . '</td>';
 
 
         //Showing Edit and Delete Link for Authenticated Users
@@ -66,6 +67,7 @@ $store_data=$cmd->fetchAll();
     $database = null;
 }
 catch (Exception $e) {
+    echo 'Please Refresh and try Again';
     exit();
 }
 require_once('gym_footer.php');
