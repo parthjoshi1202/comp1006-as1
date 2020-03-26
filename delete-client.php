@@ -7,21 +7,30 @@
 <body>
 <?php
 session_start();
+require_once 'gym_auth.php';
 
 $memberId=$_GET['memberId'];
 
-$db=new PDO('mysql:host=172.31.22.43;dbname=Parth1126914', 'Parth1126914', 'HE9auH3i9m');
 
-$sql= "DELETE FROM gym WHERE memberId= :memberId";
+try {
+    $db = new PDO('mysql:host=172.31.22.43;dbname=Parth1126914', 'Parth1126914', 'HE9auH3i9m');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$cmd=$db->prepare($sql);
-$cmd->bindParam(':memberId',$memberId,PDO::PARAM_INT);
+    $sql = "DELETE FROM gym WHERE memberId= :memberId";
 
-$cmd->execute();
-$db=null;
+    $cmd = $db->prepare($sql);
+    $cmd->bindParam(':memberId', $memberId, PDO::PARAM_INT);
 
-echo '<h3>Client Has Been Deleted</h3>';
-echo '<a href="client-list.php">Go to the Client List</a>';
+    $cmd->execute();
+    $db = null;
+
+    echo '<h3>Client Has Been Deleted</h3>';
+    echo '<a href="client-list.php">Go to the Client List</a>';
+}
+catch (Exception $e) {
+    echo 'Please Refresh and Try Again';
+    exit();
+}
 
 
 ?>
