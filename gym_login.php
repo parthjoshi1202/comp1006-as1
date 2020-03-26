@@ -9,11 +9,11 @@ require_once('gym_header.php');
         if ($_GET['invalid'] == 'true') {
             echo '<div>Invalid Login</div>';
         } else {
-            echo '<div>Please Enter your Credentials</div>';
+            echo '<div>Enter your Credentials</div>';
         }
     }
     else {
-        echo '<div>Please Enter your Credentials</div>';
+        echo '<div>Enter your Credentials</div>';
     }
     ?>
     <form method="post" action="gym_validate.php">
