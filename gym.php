@@ -27,6 +27,7 @@
             //Lakehead ID- 1126914
             //initializing variables
 
+            require_once 'gym_auth.php';
             $firstName=null;
             $lastName=null;
             $membership=null;
