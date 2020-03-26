@@ -7,7 +7,7 @@
 <body>
 <?php
 $username = $_POST['username'];
-$pw = $_POST['pw'];
+$password= $_POST['password'];
 
 try {
     $db= new PDO('mysql:host=172.31.22.43;dbname=Parth1126914', 'Parth1126914', 'HE9auH3i9m');
@@ -22,7 +22,8 @@ try {
     $user = $cmd->fetch();
 
 
-    if (!password_verify($pw, $user['pw'])) {
+    if (!password_verify($password, $user['password'])) {
+        session_start();
         header('location:gym_login.php?invalid=true');
         exit();
     } else {
