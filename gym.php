@@ -32,6 +32,8 @@
             $lastName=null;
             $membership=null;
             $memberId=null;
+            //Adding image with each record
+            $pic=null;
 
             if(!empty($GET['memberId'])) {
                 $memberId = $_GET['memberId'];
