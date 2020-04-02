@@ -38,8 +38,7 @@ try {
     $db = null;
 }
 catch(Exception $e) {
-    //header('location:gym_error.php');
-    echo 'Please Refresh the Page and Try Again';
+   header('location:gym_error.php');
     exit();
 }
 ?>
