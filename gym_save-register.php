@@ -73,8 +73,7 @@ if($ok) {
         header('location:gym_login.php');
     }
     catch (Exception $e) {
-        //header('location:error.php');
-        echo 'Please Refresh and Try Again !';
+         header('location:gym_error.php');
         exit();
     }
 }
