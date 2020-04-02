@@ -77,3 +77,7 @@ footer p {
     color: white;
     text-align: center;
 }
+
+.thumbnail {
+    width: 75px;
+}
