@@ -99,7 +99,7 @@ if (!empty($_GET['memberId'])) {
         <?php
         if (!empty($pic)) {
             echo '<div>
-                    <img src="comp1006-as1/images/' . $pic . '" alt="User Image" />
+                    <img src="comp1006-as1/gym_upload/' . $pic . '" alt="User Image" />
                 </div>';
         }
         ?>
