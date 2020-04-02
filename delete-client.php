@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Deleting-Client</title>
+    <link href="css/css.css" rel="stylesheet" />
 </head>
 <body>
 <?php
@@ -28,7 +29,7 @@ try {
     echo '<a href="client-list.php">Go to the Client List</a>';
 }
 catch (Exception $e) {
-    echo 'Please Refresh and Try Again';
+    header('location:gym_error.php');
     exit();
 }
 
